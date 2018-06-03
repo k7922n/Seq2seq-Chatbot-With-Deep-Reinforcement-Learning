@@ -72,13 +72,13 @@ Simply run:
 
 ## File in this project
 
-###Folders:  
+### Folders:  
 `corpus/`: store the training data.  
 `model/`: store the pre-trained seq2seq model.  
 `model_RL/`: store the reinforcement learning seq2seq model.  
 `sentiment_analysis/`: the code of sentiement analysis.  
 
-###Files:  
+### Files:  
 `data_utils.py`: Data preprocessing (Tokenizer, load data ...etc).  
 `seq2seq_model.py`: the core function of the reinforcment learning model.  
 `seq2seq.py`: some functions modified from tensorflow source code in order to fit the reinforcement learning algorithm. (only this function is from open source)  
