@@ -99,7 +99,7 @@ def train_MLE():
       loss_list.append(loss)  
       loss = 0
 
-      checkpoint_path = os.path.join(FLAGS.model_dir, "C8763.ckpt")
+      checkpoint_path = os.path.join(FLAGS.model_dir, "MLE.ckpt")
       model.saver.save(sess, checkpoint_path, global_step = step)
       print('Saving model at step %s' % step)
 
@@ -166,7 +166,7 @@ def train_RL():
     
     if step % FLAGS.check_step == 0:
       print('Loss at step %s: %s' % (step, loss))
-      checkpoint_path = os.path.join('model_RL', "C8763.ckpt")
+      checkpoint_path = os.path.join('model_RL', "RL.ckpt")
       model.saver.save(sess1, checkpoint_path, global_step = step)
       print('Saving model at step %s' % step)
 

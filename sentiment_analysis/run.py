@@ -6,7 +6,7 @@ import sys
 import numpy as np
 sys.path.append('../sentiment_analysis/')
 import dataset
-import model
+from . import model
 
 VOCAB_SIZE = 10000
 BATCH_SIZE = 32
