@@ -37,7 +37,7 @@ Before training the seq2seq model with reinforcement learning, you need to pre-t
 
 2. Pre-train the seq2seq model as the coherence reward function and also as the initialization for the reinforcement learning.
 
-3. Put the dataset in `/corpus` as input sentence dataset named `source` and output sentence named `target` (These two files should contain the same amount of dialogues)
+3. Put the dataset in `corpus/` as input sentence dataset named `source` and output sentence named `target` (These two files should contain the same amount of dialogues)
 The dialogue corpus can be downloaded [here](https://github.com/marsan-ma/chat_corpus)
 
 Run:
@@ -62,23 +62,23 @@ Simply run:
 `--hidden_size`: number of units of hidden layer  
 `--num_layers`: numbers of the layer  
 `--batch_size`: batch size  
-`mode`: mode of the seq2seq model (MLE, RL, TEST)  
-`source_data_dir`: the path of the source file  
-`target_data_dir`: the path of the target file  
-`model_dir`: directory of the pre-trained seq2seq model  
-`model_rl_dir`: direcory of the reinforcement learning seq2seq model  
-`check_step`: step interval of saving model  
+`--mode`: mode of the seq2seq model (MLE, RL, TEST)  
+`--source_data_dir`: the path of the source file  
+`--target_data_dir`: the path of the target file  
+`--model_dir`: directory of the pre-trained seq2seq model  
+`--model_rl_dir`: direcory of the reinforcement learning seq2seq model  
+`--check_step`: step interval of saving model  
 
 
 ## File in this project
 
-Folders:  
+###Folders:  
 `corpus/`: store the training data.  
 `model/`: store the pre-trained seq2seq model.  
 `model_RL/`: store the reinforcement learning seq2seq model.  
 `sentiment_analysis/`: the code of sentiement analysis.  
 
-Files:  
+###Files:  
 `data_utils.py`: Data preprocessing (Tokenizer, load data ...etc).  
 `seq2seq_model.py`: the core function of the reinforcment learning model.  
 `seq2seq.py`: some functions modified from tensorflow source code in order to fit the reinforcement learning algorithm. (only this function is from open source)  
