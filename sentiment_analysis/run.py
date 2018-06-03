@@ -1,4 +1,5 @@
 import tensorflow as tf
+from tensorflow.python.platform import gfile
 import random
 import os
 import sys
@@ -31,6 +32,13 @@ def create_model(session, mode):
   return m
 
 def train():
+   if gfile.Exists('corpus/mapping') and gfile.Exists('corpus/SAD.csv.token'):
+     print('Files have already been formed!')
+   else:
+     dataset.form_vocab_mapping(50000)
+     vocab_map, _ = dataset.read_map('corpus/mapping')
+     dataset.file_to_token('corpus/SAD.csv', vocab_map)
+
    d = dataset.read_data('corpus/SAD.csv.token')
    random.shuffle(d)    
    
